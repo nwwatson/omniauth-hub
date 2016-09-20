@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  uid: MyString
+  name: MyString
+  status: MyString
+  is_organization_owner: false
+
+two:
+  uid: MyString
+  name: MyString
+  status: MyString
+  is_organization_owner: false
