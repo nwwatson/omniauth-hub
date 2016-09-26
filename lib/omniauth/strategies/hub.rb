@@ -3,11 +3,11 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Hub < OmniAuth::Strategies::OAuth2
-      option :name, "entropi"
+      option :name, "hub"
       option :client_options, {
         site: OmniAuth::Hub.provider_url,
-        authorize_url:    "/auth/entropi/authorize",
-        access_token_url: "/auth/entropi/access_token"
+        authorize_url:    "/auth/hub/authorize",
+        access_token_url: "/auth/hub/access_token"
       }
 
       uid { raw_info['uid'] }
@@ -30,7 +30,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get("/auth/entropi/user.json?oauth_token=#{access_token.token}").parsed
+        @raw_info ||= access_token.get("/auth/hub/user.json?oauth_token=#{access_token.token}").parsed
       end
     end
   end

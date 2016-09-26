@@ -2,14 +2,14 @@ require 'rails'
 
 module OmniAuth
   module Hub
-    
+
     # Enables organization support using the gem
     mattr_accessor :enable_organizations
     @@enable_organizations = true
 
     # Sets the provider url omniauth
     mattr_accessor :provider_url
-    @@provider_url = "https://hub.entropi.co"
+    @@provider_url = "https://localhost:3000"
 
     # Sets the omniauth application id
     mattr_accessor :omniauth_entropi_app_id
@@ -24,4 +24,4 @@ module OmniAuth
   end
 end
 
-require "omniauth/entropi/engine"
+require "omniauth/hub/engine"

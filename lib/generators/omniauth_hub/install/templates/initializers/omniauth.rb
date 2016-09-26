@@ -1,4 +1,4 @@
-require 'omniauth/strategies/entropi'
+require 'omniauth/strategies/hub'
 
 OmniAuth::Hub.setup do |config|
   # ==> Configuration for Multiple Organizations

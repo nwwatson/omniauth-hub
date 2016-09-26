@@ -1,10 +1,10 @@
 require 'rails/generators'
 
-module OmniauthEntropi
+module OmniauthHub
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
       include Rails::Generators::Migration
-      
+
       source_root File.expand_path('../templates', __FILE__)
       desc "Install the local User model, migration and OmniAuth initializer"
 
@@ -23,7 +23,7 @@ module OmniauthEntropi
       rescue Exception => e
         puts e.message
       end
-      
+
       def copy_models
         if use_mongoid?
           copy_file "models/mongoid/user.rb",             "app/models/user.rb"
@@ -34,18 +34,18 @@ module OmniauthEntropi
           copy_file "models/active_record/subscription.rb", "app/models/subscription.rb"
         end
       end
-      
+
       def copy_controllers
         copy_file "controllers/user_sessions_controller.rb", "app/controllers/user_sessions_controller.rb"
         copy_file "controllers/organizations_controller.rb", "app/controllers/organizations_controller.rb"
       end
-      
+
       def copy_config
-        copy_file "initializers/omniauth.rb", "config/initializers/entropi_omniauth.rb"
+        copy_file "initializers/omniauth.rb", "config/initializers/hub_omniauth.rb"
       end
-      
+
     private
-      
+
       def use_mongoid?
         defined?(Mongoid) == "constant" && Mongoid.class == Module
       end

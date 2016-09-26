@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  include OmniAuth::Hub::SentientUser
-
   self.primary_key = "uid"
 
   has_many :organization_memberships, foreign_key: "user_id",         class_name: "Membership"
